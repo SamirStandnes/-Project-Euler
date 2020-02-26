@@ -25,6 +25,38 @@ function nthPrime(n) {
 nthPrime(10001);
 
 
+function isPrime2(num) {
+	let t0 = performance.now();
+	for (let i = 2; i < num; i++) {
+		if (num % i == 0) {
+			let t2 = performance.now();
+    		console.log(t2 - t0);
+			return false;
+		}
+	}
+	let t1 = performance.now();
+    console.log(t1 - t0);
+	return true;	
+}
+
+function isPrime3(num) {
+  let t0 = performance.now();
+  var sqrtnum=Math.floor(Math.sqrt(num));
+    var prime = num != 1;
+    for(var i=2; i<sqrtnum+1; i++) { // sqrtnum+1
+        if(num % i == 0) {
+            prime = false;
+            break;
+        }
+    }
+    let t1 = performance.now();
+
+    console.log(t1 - t0);
+    return prime;
+}
+
+
+
 
 
 
